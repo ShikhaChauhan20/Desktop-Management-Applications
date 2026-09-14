@@ -114,8 +114,7 @@ public class FeedbackApp extends JFrame implements ActionListener{
 				}
 				catch (SQLException ex) {
 					JOptionPane.showMessageDialog(this,"Database Error: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE); 
-					
-					// TODO: handle exception
+				
 				}
 		}
 	private void viewAllFeedback() {
@@ -131,7 +130,6 @@ public class FeedbackApp extends JFrame implements ActionListener{
                 Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 ResultSet rs = stmt.executeQuery(selectQuery)) {
 
-               // Move cursor to the end to get row count
                rs.last();
                int totalRows = rs.getRow();
                rs.beforeFirst();
@@ -146,7 +144,6 @@ public class FeedbackApp extends JFrame implements ActionListener{
                    i++;
                }
 
-               // Create JTable and embed it inside a JScrollPane
                JTable table = new JTable(data, columns);
                JScrollPane scrollPane = new JScrollPane(table);
                viewFrame.add(scrollPane, BorderLayout.CENTER);
@@ -158,7 +155,6 @@ public class FeedbackApp extends JFrame implements ActionListener{
            }
        }
 
-       // Helper to reset inputs
        private void clearForm() {
            txtName.setText("");
            txtEmail.setText("");
