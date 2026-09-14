@@ -29,7 +29,7 @@ public class EmployeeSystem extends JFrame {
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(10, 10));
 
-        // Form Panel
+        
         JPanel formPanel = new JPanel(new GridLayout(6, 2, 5, 10));
         formPanel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 
@@ -60,7 +60,7 @@ public class EmployeeSystem extends JFrame {
 
         add(formPanel, BorderLayout.WEST);
 
-        // Table Panel
+
         String[] columns = {"ID", "Name", "Department", "Designation", "Salary"};
         model = new DefaultTableModel(columns, 0);
         table = new JTable(model);
@@ -82,7 +82,7 @@ public class EmployeeSystem extends JFrame {
                 displayEmployees();
             }
         });
-    } // <-- End of constructor
+    } 
 
     private void saveEmployee() {
         String sql = "INSERT INTO employee VALUES (?,?,?,?,?)";
